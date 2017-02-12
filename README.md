@@ -10,5 +10,10 @@ TBD...
  * __Gökberk Aktulay__
  * __Sinan Öndül__
 
+##Weekly Meeting Schedule :clock10:
 
+Day | Time
+------------ | -------------
+Monday | TDB..
+Wednesday | TDB..
 
