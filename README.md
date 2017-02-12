@@ -1,6 +1,6 @@
 #CS319-Group 2A Project
 
-#Group Members :octocat:
+##Group Members :octocat:
  * __Başak Melis Öcal__
  * __Gökcan Değirmenci__
  * __Gökberk Aktulay__
