@@ -14,6 +14,6 @@ TBD...
 
 Day | Time
 ------------ | -------------
-Monday | TDB..
-Wednesday | TDB..
+Monday | TBD..
+Wednesday | TBD..
 
