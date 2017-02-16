@@ -16,6 +16,6 @@ __Mafia: The City of Sin__ :city_sunset:
 
 Day | Time
 ------------ | -------------
-Monday | TBD..
-Wednesday | TBD..
+Monday | 15:40-17:40
+Wednesday | 13:40-17:40
 
