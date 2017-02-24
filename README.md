@@ -19,6 +19,8 @@ Day | Time
 Monday | 15:40-17:40
 Wednesday | 13:40-17:40
 
+*Disclaimer: We use not only physical meeting times but also Google Docs and Slack for productivity.
+
 ##Progress Wiki
 
 Now, the project's progress can be followed from our new [Wiki](https://github.com/Skylifee7/Mafia-TCoS-CS319-Group2A/wiki/Wiki-of-%22Mafia:The-City-of-Sin%22) page! :point_left: (Hurraayy!!) 
