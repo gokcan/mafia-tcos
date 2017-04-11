@@ -28,7 +28,7 @@ Wednesday | 13:40-17:40
 - [x] __Object-Class Modeling with UML__
 - [x] __Dynamic Modeling with UML__
 - [x] __High Level System Design__
-- [ ] __Low level System Design__
+- [x] __Low Level System Design__
 
 Now, the project's progress can be followed from our new [Wiki](https://github.com/Skylifee7/Mafia-TCoS-CS319-Group2A/wiki/Wiki-of-%22Mafia:The-City-of-Sin%22) page! :point_left: (Hurraayy!!) 
 
