@@ -34,3 +34,10 @@ Now, the project's progress can be followed from our new [Wiki](https://github.c
 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-responsibility.svg)](http://forthebadge.com)
 
+### Important Notice:
+
+*Starting with the April 15, the implementation process of the Mafia:TCoS will be held in a private repository.
+That means, this repo will be unreachable from outside of the team members + project supervisors. If you want to discuss the development of the Mafia:TCoS any further, please contact with team members personally.
+
+
+
