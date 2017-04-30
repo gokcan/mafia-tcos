@@ -2,7 +2,9 @@ import javax.sound.sampled.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
-
+/*
+* Only works with .wav files. Use at your own peril
+*/
 public class SoundManager {
    
    public SoundManager(){
