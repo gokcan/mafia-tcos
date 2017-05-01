@@ -12,7 +12,7 @@ const bodyParser = require('body-parser')
 var mongoose = require('mongoose');
 mongoose.connect('mongodb-remote-server-uri');
 
-var Player = require('./app/models/player');
+var Player = require('./app/model/player');
 
 app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: true}));

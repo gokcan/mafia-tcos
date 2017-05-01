@@ -1,7 +1,7 @@
 /**
  * Created by SKYLIFE on 25/04/2017.
  */
-package com.skylife.mafia.tcos;
+package network;
 
 
 import java.util.concurrent.TimeUnit;
