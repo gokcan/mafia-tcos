@@ -1,5 +1,4 @@
 'use strict'
-
 /*
  Author: Skylifee7 , check the @github repo for incoming commits.
  Node.js RESTful Web Service for processing requests of the
@@ -53,7 +52,6 @@ router.use('/players', function (req, res, next) {
             else {
                 req.decoded = decoded;
                 next();
-
             }
         })
     }
@@ -77,19 +75,29 @@ router.get('/', function (req, res) {
 router.route('/signup')
     .post(function (req, res) {
 
-        var player = new Player();
+        Player.findOne({
+            name: req.body.name
 
-        player.name = req.body.name;
-        player.password = req.body.password;
+        }, function (err, player) {
 
+            if (err) throw err;
 
-        player.save(function (err) {
+            if (!player) {
 
-            if (err) res.send(err);
+                var player = new Player();
 
-            res.json({message: 'Player instance has been created!'});
+                player.name = req.body.name;
+                player.password = req.body.password;
 
-        });
+                player.save(function (err) {
+
+                    if (err) res.send(err);
+
+                    res.json({message: 'Player instance has been created!'});
+                });
+            }
+            else if(player) res.json({message: 'Player name exists, choose another name.'});
+        })
 
     });
 
@@ -133,7 +141,6 @@ router.route('/authenticate')
 
     });
 
-
 router.route('/players')
 
     .get(function (req, res) {
@@ -145,7 +152,6 @@ router.route('/players')
         });
 
     });
-
 
 router.route('/players/:player_uid')
 
@@ -197,7 +203,6 @@ router.route('/players/:player_uid')
 
 
 app.use('/api', router);
-
 
 app.listen(app.get('port'), function () {
     console.log("Running at port:" + app.get('port'));
