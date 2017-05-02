@@ -98,7 +98,10 @@ router.route('/signup')
                     });
                 });
             }
-            else if (player) res.json({message: 'Player name exists, choose another name.'});
+            else if(player) res.json({
+                message: 'Player name exists, choose another name.',
+                success: false
+            });
         })
 
     });
@@ -123,7 +126,7 @@ router.route('/authenticate')
                 /* If Bcrypt-hashed password in the db matches with the input password
                  *   create the authentication token (JWT).
                  */
-                player.comparePassword(req.body.password, function (err, isMatch) {
+                player.comparePassword(req.body.password, function(err, isMatch){
 
                     if (isMatch && !err) {
                         var token = jwt.sign(player, app.get('SecretServerKey'), {
@@ -201,8 +204,7 @@ router.route('/players/:player_uid')
 
     .delete(function (req, res) {
         Player.remove({
-            _id: req.params.player_uid
-        }, function (err, player) {
+            _id: req.params.player_uid}, function (err, player) {
 
             if (err) {
                 res.send(err);

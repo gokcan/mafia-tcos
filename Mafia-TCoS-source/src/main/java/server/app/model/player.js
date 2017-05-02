@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
-var Schema = mongoose.Schema;
+var mongoose     = require('mongoose');
+var bcrypt      =  require('bcrypt');
+var Schema       = mongoose.Schema;
 
-var PlayerSchema = new Schema({
+var PlayerSchema  = new Schema({
     name: String,
     password: String,
     health: Number,
@@ -36,7 +36,7 @@ PlayerSchema.pre('save', function (next) {
     }
 });
 
-PlayerSchema.methods.comparePassword = function (passw, callbq) {
+PlayerSchema.methods.comparePassword= function (passw, callbq) {
     bcrypt.compare(passw, this.password, function (err, isMatch) {
         if (err) {
             return callbq(err);
