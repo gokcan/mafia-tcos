@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CreditsController">
+    <children>
+        <VBox alignment="TOP_CENTER" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox alignment="CENTER" focusTraversable="true" prefHeight="300.0" prefWidth="594.0">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@mafia.png" />
+                            </image>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </ImageView>
+                        <Label text="CREDITS" textAlignment="CENTER" textOverrun="CLIP">
+                            <font>
+                                <Font name="Copperplate Gothic Bold" size="28.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <Label text="Başak Melis Öcal">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="22.0" prefWidth="263.0" text="       Gökcan Değirmenci" textAlignment="JUSTIFY" wrapText="true">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label text="Gökberk Aktulay">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label text="Sinan Öndül">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="19.0" />
+                    </font>
+                </Label>
+                <HBox id="backBox" alignment="CENTER" prefHeight="103.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <Button id="backButton" mnemonicParsing="false" onMouseClicked="#buttonPressed" text="BACK">
+                            <font>
+                                <Font name="Copperplate Gothic Bold" size="18.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
