@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+   <children>
+      <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="323.0" prefWidth="893.0">
+               <children>
+                  <AnchorPane prefHeight="316.0" prefWidth="387.0">
+                     <children>
+                        <Label layoutX="61.0" layoutY="289.0" text="Welcome to the City of Sin...">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0" />
+                           </effect>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@mafia.png" />
+                           </image>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="8.0" layoutY="194.0" text="MAFIA: THE CITY OF SIN">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="28.0" />
+                           </font>
+                           <effect>
+                              <Reflection fraction="0.82" topOpacity="0.26">
+                                 <input>
+                                    <DropShadow height="10.0" radius="4.5" width="10.0" />
+                                 </input>
+                              </Reflection>
+                           </effect>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <Button id="loginButton" lineSpacing="20.0" mnemonicParsing="false" onMouseClicked="#loginPressed" prefHeight="32.0" prefWidth="148.0" text="LOGIN">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button id="signUpButton" layoutX="265.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#signUpPressed" prefHeight="32.0" prefWidth="150.0" text="SIGN UP">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="profileButton" layoutX="257.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#profilePressed" prefHeight="32.0" prefWidth="150.0" text="PROFILE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="settingsButton" layoutX="253.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#settingsPressed" prefHeight="32.0" prefWidth="149.0" text="Settings">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="infoButton" layoutX="254.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#infoPressed" prefHeight="32.0" prefWidth="151.0" text="info">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="creditsButton" layoutX="380.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#creditsPressed" text="view credits">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
