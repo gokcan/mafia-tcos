@@ -1,15 +1,13 @@
 'use strict'
 /*
  Author: Skylifee7 , check the @github repo for incoming commits.
- Node.js RESTful Web Service for processing requests of the
+ Node.js secured RESTful Web Service for processing requests of the
  Mafia:TCoS' game client.
  */
 
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser')
-const morgan = require('morgan')
-
 const jwt = require('jsonwebtoken')
 var config = require('./config')
 
@@ -23,15 +21,11 @@ app.set('SecretServerKey', config.secret);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(morgan('dev-log'));
-
 var router = express.Router();
 
 router.use(function (req, res, next) {
     console.log('Something is happenning...')
-
     next();
-
 })
 
 /*
@@ -55,7 +49,6 @@ router.use('/players', function (req, res, next) {
             }
         })
     }
-
     else {
         /*
          If there is no token provided in the request, we need to return 401 Error to the Client.
@@ -86,17 +79,26 @@ router.route('/signup')
 
                 var player = new Player();
 
+                /* If the player's first time in town,
+                 * assign fresh values for his properties.
+                 */
                 player.name = req.body.name;
                 player.password = req.body.password;
+                player.health = 100;
+                player.money = 1000;
+                player.experience = 1;
 
                 player.save(function (err) {
 
                     if (err) res.send(err);
 
-                    res.json({message: 'Player instance has been created!'});
+                    res.json({
+                        message: 'Player instance has been created!',
+                        player_uid: player._id
+                    });
                 });
             }
-            else if(player) res.json({message: 'Player name exists, choose another name.'});
+            else if (player) res.json({message: 'Player name exists, choose another name.'});
         })
 
     });
@@ -111,34 +113,40 @@ router.route('/authenticate')
             if (err) throw err;
 
             if (!player) {
+                //res.sendStatus(404);
                 res.json({
                     success: false,
                     message: "Authentication failed, User not found."
                 })
             }
             else if (player) {
-                if (player.password != req.body.password) {
-                    res.json({
-                        success: false,
-                        message: "Authentication failed, Password is wrong."
-                    })
-                }
-                else {
+                /* If Bcrypt-hashed password in the db matches with the input password
+                 *   create the authentication token (JWT).
+                 */
+                player.comparePassword(req.body.password, function (err, isMatch) {
 
-                    var token = jwt.sign(player, app.get('SecretServerKey'), {
-                        expiresIn: 60 * 60 * 60 // seconds
-                    });
+                    if (isMatch && !err) {
+                        var token = jwt.sign(player, app.get('SecretServerKey'), {
+                            expiresIn: 60 * 60 * 60 // seconds
+                        });
 
-                    res.json({
-                        success: true,
-                        message: 'Token is passed to the client.',
-                        token: token
-                    })
-                }
+                        //res.sendStatus(200);
+                        res.json({
+                            success: true,
+                            player_uid: player._id,
+                            message: 'Token is passed to the client.',
+                            authToken: token
+                        })
+                    }
+                    else {
+                        res.json({
+                            success: false,
+                            message: "Authentication failed, Password is wrong."
+                        })
+                    }
+                })
             }
-
         })
-
     });
 
 router.route('/players')
@@ -174,6 +182,9 @@ router.route('/players/:player_uid')
 
             player.name = req.body.name;
             player.password = req.body.password;
+            player.health = req.body.health;
+            player.money = req.body.money;
+            player.experience = req.body.experience;
 
             player.save(function (err) {
 
@@ -181,7 +192,7 @@ router.route('/players/:player_uid')
 
                     res.send(err);
                 }
-                res.json({message: " Player has been updated!"});
+                res.json({message: "Player has been updated!"});
 
             });
 
@@ -190,13 +201,14 @@ router.route('/players/:player_uid')
 
     .delete(function (req, res) {
         Player.remove({
-            _id: req.params.player_uid}, function (err, player) {
+            _id: req.params.player_uid
+        }, function (err, player) {
 
             if (err) {
                 res.send(err);
 
             }
-            res.json({message: ' Player has been deleted!'});
+            res.json({message: 'Player has been deleted!'});
 
         });
     });
