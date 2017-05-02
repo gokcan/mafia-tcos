@@ -8,13 +8,13 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
     <children>
-        <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" spacing="10.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER" prefHeight="346.0" prefWidth="893.0">
+                <HBox alignment="CENTER" prefHeight="380.0" prefWidth="893.0">
                     <children>
-                        <AnchorPane prefHeight="339.0" prefWidth="387.0">
+                        <AnchorPane prefHeight="361.0" prefWidth="387.0">
                             <children>
                                 <Label layoutX="61.0" layoutY="289.0" text="Welcome to the City of Sin...">
                                     <font>
@@ -48,7 +48,7 @@
                         </AnchorPane>
                     </children>
                 </HBox>
-                <Button id="continueButton" layoutX="265.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#continuePressed" prefHeight="32.0" prefWidth="150.0" text="CONTINUE">
+                <Button id="continueButton" layoutX="265.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#buttonPressed" prefHeight="32.0" prefWidth="150.0" text="CONTINUE">
                     <effect>
                         <DropShadow />
                     </effect>
@@ -56,7 +56,7 @@
                         <Font name="Copperplate Gothic Bold" size="18.0" />
                     </font>
                 </Button>
-                <Button id="profileButton" layoutX="257.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#profilePressed" prefHeight="32.0" prefWidth="150.0" text="PROFILE">
+                <Button id="profileButton" layoutX="257.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#buttonPressed" prefHeight="32.0" prefWidth="150.0" text="PROFILE">
                     <effect>
                         <DropShadow />
                     </effect>
@@ -64,7 +64,7 @@
                         <Font name="Copperplate Gothic Bold" size="18.0" />
                     </font>
                 </Button>
-                <Button id="settingsButton" layoutX="253.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#settingsPressed" prefHeight="32.0" prefWidth="149.0" text="Settings">
+                <Button id="settingsButton" layoutX="253.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#buttonPressed" prefHeight="32.0" prefWidth="149.0" text="Settings">
                     <effect>
                         <DropShadow />
                     </effect>
@@ -72,7 +72,7 @@
                         <Font name="Copperplate Gothic Bold" size="18.0" />
                     </font>
                 </Button>
-                <Button id="infoButton" layoutX="254.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#infoPressed" prefHeight="32.0" prefWidth="151.0" text="info">
+                <Button id="infoButton" layoutX="254.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#buttonPressed" prefHeight="32.0" prefWidth="151.0" text="info">
                     <effect>
                         <DropShadow />
                     </effect>
@@ -80,7 +80,7 @@
                         <Font name="Copperplate Gothic Bold" size="18.0" />
                     </font>
                 </Button>
-                <Button id="creditsButton" layoutX="380.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#creditsPressed" text="view credits">
+                <Button id="creditsButton" layoutX="380.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#buttonPressed" text="view credits">
                     <effect>
                         <DropShadow />
                     </effect>

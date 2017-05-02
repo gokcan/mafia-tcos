@@ -39,7 +39,7 @@
                 </VBox>
                 <HBox alignment="CENTER" prefHeight="65.0" prefWidth="607.0">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
+                        <Button id="backButtonInfo" mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
                             <font>
                                 <Font name="Copperplate Gothic Bold" size="18.0" />
                             </font>

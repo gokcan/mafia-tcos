@@ -11,7 +11,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SettingsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SettingsController">
     <children>
         <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -33,13 +33,13 @@
                     <children>
                         <RadioButton id="musicButton" mnemonicParsing="false" onMouseClicked="#enableMusic" text="Enable Music" />
                         <RadioButton id="soundsButton" mnemonicParsing="false" onMouseClicked="#enableSounds" text="Enable background sounds" />
-                        <Label text="Volume" />
-                        <Slider id="volumeSlider" onMouseDragged="#volumeChanged" prefHeight="21.0" prefWidth="191.0" />
+                        <Label fx:id="volumeLabel" text="Volume" />
+                        <Slider id="volumeSlider" fx:id="volumeSlider" onMouseDragged="#volumeChanged" prefHeight="21.0" prefWidth="191.0" value="100.0" />
                     </children>
                 </VBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
+                        <Button fx:id="backButtonSettings" mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
                             <font>
                                 <Font name="Copperplate Gothic Bold" size="18.0" />
                             </font>

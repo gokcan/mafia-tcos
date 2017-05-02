@@ -54,7 +54,7 @@
                 </Label>
                 <HBox id="backBox" alignment="CENTER" prefHeight="103.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <children>
-                        <Button id="backButton" mnemonicParsing="false" onMouseClicked="#buttonPressed" text="BACK">
+                        <Button id="backButtonCredits" mnemonicParsing="false" onMouseClicked="#buttonPressed" text="BACK">
                             <font>
                                 <Font name="Copperplate Gothic Bold" size="18.0" />
                             </font>

@@ -23,7 +23,7 @@ public class InfoController {
         if ((button).getText().equals("BACK")) {
             Stage current = (Stage) button.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("menuSample.fxml"));
-            current.setScene(new Scene(root, 300, 275));
+            current.setScene(new Scene(root, 1080, 720));
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();
             current.setX(bounds.getMinX());
