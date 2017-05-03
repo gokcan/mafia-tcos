@@ -87,6 +87,7 @@ public class SoundManager {
    public void playSound(int i){
       sound.loadClip(soundFiles.get(i));
       sound.playClip();
+      music.adjustClipVolume(absoluteVolume);
       isSoundEnabled = true;
    }
    
@@ -106,6 +107,7 @@ public class SoundManager {
          absoluteVolume = vol / 100;
       }
       music.adjustClipVolume(absoluteVolume);
+      sound.adjustClipVolume(absoluteVolume);
    }
    /*
     * you can use this method to test the SoundManager
