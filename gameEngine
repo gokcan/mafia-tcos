@@ -1,0 +1,90 @@
+/**
+ * Created by sinan_000 on 1.5.2017.
+ */
+import java.util.concurrent.ThreadLocalRandom;
+
+public class gameEngine {
+
+    double raidChance;
+    double successChance;
+
+    //methods
+    private double calculateRaidChance(account A, boolean isCrimeCommited){ //Algoritma değişecek ama taslak böyle
+        if(updateHealth())
+        {
+            raidChance = raidChance + 10;
+        }
+    }
+    private double calculateSuccessChance(account A, boolean isCrimeCommited){
+        int n = giveRandomness();
+        successChance = new int();
+        successChance= (crime.getDefaultChance() * (1/A.getRank()) * A.getUpgradesBonus()) + n ; //crime ve içindeki metodlar lazım
+
+        return successChance;
+
+    }
+    private int giveRandomness(){
+        //bu kısımda success rate mi yoksa random sayıyı mı döndürecek? (şu an -11 11 arası random dönüyor. (int)
+        int max=11;
+        int min=-11;
+        int n = ThreadLocalRandom.current().nextInt(min, max + 1);
+
+        return n;
+    }
+    private void updateMoney(account A) {
+        A.setMoney(A.getMoney() + moneyLoundered);
+
+    }
+    private void updateImprisonment(account A){
+        A.setImprisonmentCount(A.getImprisonmentCount +1 )
+    }
+    private void updateHealth(account A){
+        A.setHealth(A.getHealth - // burası edit)
+    }
+    private void updateExperience(account A){
+        A.setExperience(A.getExperience + crime.experienceGained)
+    }
+    private void updateRank(account A){
+        A.setRank()
+    }
+    private void waitForJailTime(){
+        
+    }
+    private void gameLoop(){
+        
+    }
+    private boolean isOver(){
+        if(A.getImprisonmentCount == 10)
+            return true;
+        else
+            false;
+    }
+    private void endGame(boolean isOver){
+        if(isOver)
+            // ne yapacak bilmiyorum
+    }
+    private void initGame(){
+
+    }
+    private void applySettings(){
+        set
+    }
+    public gameEngine getEngine(){
+
+    }
+    private void loadGame(account A){
+        
+    }
+    private void updateProfile(){
+
+    }
+    private int getUserChoice(){
+
+    }
+    private void unlockAchivement(int rank, int money, int totalCrimes){
+
+    }
+    private  gameEngine(){
+        
+    }
+}
