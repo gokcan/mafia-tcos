@@ -183,8 +183,8 @@ router.route('/players/:player_uid')
                 res.send(err);
             }
 
-            player.name = req.body.name;
-            player.password = req.body.password;
+
+            player.inPrison = req.body.inPrison;
             player.health = req.body.health;
             player.money = req.body.money;
             player.experience = req.body.experience;
@@ -192,8 +192,7 @@ router.route('/players/:player_uid')
             player.save(function (err) {
 
                 if (err) {
-
-                    res.send(err);
+                    return res.send(err);
                 }
                 res.json({message: "Player has been updated!"});
 
