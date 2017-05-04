@@ -17,7 +17,6 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("menuSample.fxml"));
         primaryStage.setTitle("Hello World");
 
-
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
         primaryStage.setX(bounds.getMinX());
@@ -26,6 +25,7 @@ public class Main extends Application {
         primaryStage.setHeight(bounds.getHeight());
         primaryStage.setMaximized(true);
         Scene menuScene = new Scene(root, 1080, 720);
+        //primaryStage.setFullScreen(true);
         primaryStage.setScene(menuScene);
 
 

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MapController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView id="profilePhoto" fitHeight="170.0" fitWidth="137.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="userNameLabel" layoutX="175.0" layoutY="58.0" text="NAME" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label id="healthLabel" layoutX="282.0" layoutY="58.0" text="HEALTH" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar id="healthProgress" layoutX="382.0" layoutY="54.0" prefHeight="27.0" prefWidth="94.0" progress="1.0" />
+                  <Label id="fbiLabel" layoutX="495.0" layoutY="59.0" text="FBI RAID CHANCE" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar id="chanceProgress" layoutX="691.0" layoutY="54.0" prefHeight="27.0" prefWidth="94.0" progress="0.0" />
+                  <Label id="rankLabel" layoutX="812.0" layoutY="57.0" text="RANK" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar id="rankProgress" layoutX="889.0" layoutY="54.0" prefHeight="27.0" prefWidth="94.0" progress="0.0" />
+                  <Label id="titleLabel" layoutX="1021.0" layoutY="58.0" text="TITLE" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button id="accountButton" layoutX="1142.0" layoutY="81.0" mnemonicParsing="false" text="ACCOUNT">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button id="infoButton" layoutX="1143.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#infoClicked" prefHeight="32.0" prefWidth="126.0" text="info">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <ImageView id="infoButton" fitHeight="30.0" fitWidth="26.0" layoutX="1232.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="580.0" fitWidth="1300.0" opacity="0.7" pickOnBounds="true">
+                     <image>
+                        <Image url="@mapmafia3.jpg" />
+                     </image>
+                  </ImageView>
+                  <GridPane layoutX="115.0" layoutY="55.0" prefHeight="471.0" prefWidth="1071.0" style="-fx-grid-lines-visible: false;">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="98.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button id="crimeButton4" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="CRIME" textFill="#970000" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="crimeButton1" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" text="CRIME" textFill="#970000" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="carTheftButton" mnemonicParsing="false" prefHeight="66.0" prefWidth="120.0" text="CAR THEFT" textFill="#970000" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Bodoni MT Black" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button id="drugButton1" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" text="DRUGS" textFill="#970000" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="drugButton2" layoutX="446.0" layoutY="429.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="123.0" text="DRUGS" textFill="#970000" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="crimeButton5" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" text="CRIME" textFill="#970000" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="crimeButton3" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" text="CRIME" textFill="#970000" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="buyWeapon1" layoutX="112.0" layoutY="320.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="BUY WEAPON" textFill="#970000" GridPane.columnIndex="8" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Bodoni MT Black" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button id="buyWeapon2" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="BUY WEAPON" textFill="#970000" GridPane.columnIndex="8" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Bodoni MT Black" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="DRUGS: 0" textFill="#200096" GridPane.columnIndex="7">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="839.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="CARS: 0" textFill="#200096" GridPane.columnIndex="8">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="960.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="WEAPONS: 0" textFill="#200096" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="839.0" layoutY="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="BULLETS: 0" textFill="#200096" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="crimeButton2" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="CRIME" textFill="#970000" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Bodoni MT Black" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="buyBullets" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="BUY BULLETS" textFill="#970000" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Bodoni MT Black" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button id="sellCar" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="SELL CARS" textFill="#970000" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Bodoni MT Black" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

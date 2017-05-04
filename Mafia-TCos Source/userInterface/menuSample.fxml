@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
     <children>
-        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" spacing="10.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER" prefHeight="380.0" prefWidth="893.0">
                     <children>
@@ -37,11 +37,7 @@
                                         <Font name="Copperplate Gothic Bold" size="28.0" />
                                     </font>
                                     <effect>
-                                        <Reflection fraction="0.82" topOpacity="0.26">
-                                            <input>
-                                                <DropShadow height="10.0" radius="4.5" width="10.0" />
-                                            </input>
-                                        </Reflection>
+                                        <Reflection fraction="0.82" topOpacity="0.26" />
                                     </effect>
                                 </Label>
                             </children>
