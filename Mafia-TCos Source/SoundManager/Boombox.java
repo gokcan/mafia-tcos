@@ -7,12 +7,22 @@ import java.util.*;
 
 public class Boombox {
 
+    // default constructor
     public Boombox(){
         clipLoaded = false;
+        l = null;
+    }
+
+    // constructor that takes a LineListener as an arguement
+    public Boombox(LineListener listener){
+        clipLoaded = false;
+        l = listener;
     }
 
     private Clip clip;
     private Boolean clipLoaded;
+    LineListener l;
+
 
     // takes the name of the .wav file to be played and opens it as a clip
     public boolean loadClip(String name){
@@ -27,6 +37,7 @@ public class Boombox {
 
             clip = AudioSystem.getClip();
             clip.open(audioIn);
+            clip.addLineListener(l);   // adds the listener to the clip now that it is initialized
             clipLoaded = true;
             return clipLoaded;
 
@@ -62,6 +73,15 @@ public class Boombox {
             clip.loop(loopNum);
         else if (loopNum == -1)
             clip.loop(Clip.LOOP_CONTINUOUSLY);
+    }
+
+    // takes a single precision floating point number between 0 and 1 and adjusts the volume
+    public void adjustClipVolume(float vol){
+        FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        float range = volume.getMaximum() - volume.getMinimum();
+        float gain = (range * vol) + volume.getMinimum();
+        volume.setValue(gain);
+
     }
 
     // closes the clip
