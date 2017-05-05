@@ -9,20 +9,17 @@ import View.CrimeScene;
 import View.ViewController;
 import View.WelcomeScene;
 import javafx.application.Platform;
-import model.Player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Created by SKYLIFE on 30/04/2017.
+ * Created by Skylifee7 on 30/04/2017.
  */
 public class GameEngine implements AccessManager.AccessClientListener {
-
-    /*
-     WORK-IN-PROGRESS...
-     */
 
     private static GameEngine staticGameInstance;
     private AccessManager accessManager;
@@ -31,62 +28,81 @@ public class GameEngine implements AccessManager.AccessClientListener {
     private static Player playerUnique;
     private ViewController viewController;
     private HashMap<Integer, List<Crime>> mapper;
-    private static ArrayList<Crime> crimes;
+    private ArrayList<Crime> crimes;
+    private static boolean isSuccessful;
+    private double successChance;
+    private Random random;
+
     public String description;
 
+    private GameEngine() {
+        /*
+        Game Engine will obey the Singleton Pattern, but not yet implemented.
+         */
+    }
 
     public void init() {
         staticGameInstance = this;
         accessManager = new AccessManager();
         accessManager.setCustomListener(this);
+        viewController = new ViewController();
         welcomeScene = new WelcomeScene();
         crimeScene = new CrimeScene();
         mapper = new HashMap();
-        //Crime crime1 = new Crime("Hey this is test1", "21212", 2);
-        //Crime crime2 = new Crime("This is test2", "3232323", 2);
+    }
+
+
+    private void calcSuccessChance() {
+
+        int min = (2 * playerUnique.getRank() + ((int) playerUnique.getHealth()) / 10);
+        int max = ((playerUnique.getTotalExperience()) / (crimes.get(0).getDifficultyLevel() * 30));
+
+        successChance = ThreadLocalRandom.current().nextInt(min, max);
+    }
+
+    public void isSuccessful(String information) {
+
+        int index = information.indexOf("%");
+        String threshold = information.substring(index + 1, information.length() - 1);
+
+        float t = Float.parseFloat(threshold) / 100f;
+        Random r = new Random();
+        float chance = r.nextFloat();
+
+        if (playerUnique.getHealth() > 0 && chance <= t) {
+
+            Platform.runLater(() -> {
+                crimeScene.showNotification("Congrats you did it! You earned +400 XP, +220 $ and lost 11 Health Points");
+            });
+
+            playerUnique.increment(Player.TYPE.EXPERIENCE, 400);
+            playerUnique.increment(Player.TYPE.HEALTH, -11);
+            playerUnique.increment(Player.TYPE.MONEY, 220);
+
+            if (playerUnique.getTotalExperience() > 3000) {
+                playerUnique.increment(Player.TYPE.RANK, 1);
+            }
+            isSuccessful = true;
+        } else {
+            Platform.runLater(() -> {
+                crimeScene.showNotification("Failed! But you escaped..");
+            });
+
+            isSuccessful = false;
+        }
+        //else if PRISON CASE
+
+        accessManager.callUpdateService(playerUnique);
+        accessManager.callGetCrimes();
     }
 
     @Override
-    public void onLoginFailure(String response) {
+    public void onSignupSuccess(String response) {
 
         Platform.runLater(() -> {
-             welcomeScene.showNotification(response);
+            welcomeScene.showNotification(response);
         });
-    }
 
-    @Override
-    public void onFetchPlayerSuccess(Player player) {
-        playerUnique = player;
-
-    }
-
-    @Override
-    public void onFetchCrimesSuccess(ArrayList<Crime> crimeArrayList) {
-
-        populateDataForCrimeList(crimeArrayList);
-        mapper.put(1, crimes);
-        Crime crime = mapper.get(1).get(0);
-        description = crime.getDescription();
-
-    }
-    @Override
-    public void onFetchPlayerFailure(String response) {
-        //FAIL TO FETCH PLAYER
-
-    }
-
-    public boolean isSuccessful(Boolean result, Player player) {
-
-        // TODO : Implement a solid formula for calculating the success chance via another method.
-        
-        if (result) {
-            Platform.runLater(() -> {
-                crimeScene.showNotification("Congrats you did it!");
-            });
-            return true;
-        }
-
-        return false;
     }
 
     @Override
@@ -100,17 +116,16 @@ public class GameEngine implements AccessManager.AccessClientListener {
     @Override
     public void onLoginSuccess(String response) {
 
-        viewController = new ViewController();
+        accessManager.callGetPlayerData();
+        accessManager.callGetCrimes();
+
         Platform.runLater(() -> {
             viewController.changeView();
         });
-
-        accessManager.callGetPlayerData();
-        accessManager.callGetCrimes();
     }
 
     @Override
-    public void onSignupSuccess(String response) {
+    public void onLoginFailure(String response) {
 
         Platform.runLater(() -> {
             welcomeScene.showNotification(response);
@@ -118,12 +133,52 @@ public class GameEngine implements AccessManager.AccessClientListener {
 
     }
 
+    @Override
+    public void onFetchPlayerSuccess(Player player) {
+
+        playerUnique = player;
+    }
+
+    @Override
+    public void onFetchPlayerFailure(String response) {
+
+        Platform.runLater(() -> {
+            crimeScene.showNotification(response);
+        });
+    }
+
+    @Override
+    public void onFetchCrimesSuccess(ArrayList<Crime> crimeArrayList) {
+
+        accessManager.callGetPlayerData();
+        int difficulty = playerUnique.getRank();
+
+        populateDataForCrimeList(crimeArrayList);
+
+        int i = 0;
+        while (i < crimes.size()) {
+            if (crimes.get(i).getDifficultyLevel() != difficulty) {
+                crimes.remove(i);
+            }
+            i++;
+        }
+
+        for (int k = 0; k < crimes.size(); k++) {
+            calcSuccessChance();
+            crimes.get(k).setDescription(crimes.get(k).getDescription() + " (%" + successChance + ")");
+        }
+        //Crime value = mapper.get(1).get(0);
+        // description = value.getDescription();
+        // crimeScene.bindCrimes(crimes);
+    }
+
     public AccessManager getAccessManager() {
 
         return accessManager;
     }
 
-    public static ArrayList<Crime> getCrimes() {
+    public ArrayList<Crime> getCrimes() {
+
         return crimes;
     }
 
@@ -138,11 +193,7 @@ public class GameEngine implements AccessManager.AccessClientListener {
 
     private void populateDataForCrimeList(ArrayList<Crime> crimeArrayList) {
 
-         crimes = new ArrayList<>();
-
-         /*
-            Deep copy for an arraylist not a shallow one.
-          */
+        crimes = new ArrayList<>();
 
         for (int i = 0; i < crimeArrayList.size(); i++) {
             Crime crime = new Crime();
