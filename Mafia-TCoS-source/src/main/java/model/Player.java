@@ -17,7 +17,7 @@ public class Player {
     @SerializedName("drugRate")
     @Expose
     private double drugRate;
-    @SerializedName("firstname")
+    @SerializedName("name")
     @Expose
     private String name;
     @SerializedName("health")
@@ -34,7 +34,7 @@ public class Player {
     private ArrayList<Upgrade> upgrades;
     @SerializedName("achievements")
     @Expose
-    private ArrayList<Achievement> achiements;
+    private ArrayList<Achievement> achievements;
     @SerializedName("rank")
     @Expose
     private int rank;
@@ -118,7 +118,7 @@ public class Player {
         }
 
         public Builder achiements(ArrayList<Achievement> achievements) {
-            this.achiements = achievements;
+            this.achievements = achievements;
             return this;
         }
 
@@ -140,7 +140,7 @@ public class Player {
         fBIRaidChance = builder.fBIRaidChance;
         drugRate = builder.drugRate;
         bulletCount = builder.bulletCount;
-        achiements = builder.achievements;
+        achievements = builder.achievements;
         upgrades = builder.upgrades;
     }
 
@@ -187,6 +187,14 @@ public class Player {
         return health;
     }
 
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
     public void setHealth(int health) {
         this.health = health;
     }
@@ -216,13 +224,38 @@ public class Player {
     }
 
     public ArrayList<Achievement> getAchiements() {
-        return achiements;
+        return achievements;
     }
 
     public void setAchiements(ArrayList<Achievement> achiements) {
-        this.achiements = achiements;
+        this.achievements = achiements;
     }
 
+    public void increment(TYPE type, int amount) {
+
+        switch (type) {
+
+            case MONEY:
+                money += amount;
+                break;
+
+            case HEALTH:
+                health += amount;
+                break;
+
+            case EXPERIENCE:
+                totalExperience += amount;
+                break;
+
+            case RANK:
+                rank++;
+                break;
+
+            default:
+                totalExperience += amount;
+                break;
+        }
+    }
 
     @Override
     public String toString() {
@@ -233,6 +266,10 @@ public class Player {
                 ",money=" + money +
                 "health=" + health +
                 '}';
+    }
+
+    public enum TYPE {
+        HEALTH, MONEY, EXPERIENCE, RANK
     }
 
 }
