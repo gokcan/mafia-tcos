@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.CrimeScene">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <VBox.margin>
+                        <Insets left="200.0" top="40.0" />
+                    </VBox.margin>
+                    <image>
+                        <Image url="https://s3.amazonaws.com/zam-www/assets/editorial/2016/09/mafiaIII.jpg" />
+                    </image>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </ImageView>
+                <JFXRadioButton fx:id="crimeOption1" prefHeight="17.0" prefWidth="139.0" selected="true" text="Rob the bank (%56)" toggleGroup="$group">
+                    <VBox.margin>
+                        <Insets left="200.0" top="20.0" />
+                    </VBox.margin>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#ace5ee" />
+                                <Stop color="#26c2ff" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                    <font>
+                        <Font name="KG Second Chances Solid" size="13.0" />
+                    </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="crimeOption2" layoutX="10.0" layoutY="160.0" text="Kidnap the officer's daughter (%43)" toggleGroup="$group">
+                    <VBox.margin>
+                        <Insets left="200.0" top="20.0" />
+                    </VBox.margin>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#ace5ee" />
+                                <Stop color="#26c2ff" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                    <font>
+                        <Font name="KG Second Chances Solid" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="crimeOption3" layoutX="10.0" layoutY="160.0" text="Bomb the airplane (%12)" toggleGroup="$group">
+                    <VBox.margin>
+                        <Insets left="200.0" top="20.0" />
+                    </VBox.margin>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#ace5ee" />
+                                <Stop color="#26c2ff" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                    <font>
+                        <Font name="KG Second Chances Sketch" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="crimeOption4" layoutX="10.0" layoutY="194.0" text="Fuck the police (%4)" toggleGroup="$group">
+                    <VBox.margin>
+                        <Insets left="200.0" top="20.0" />
+                    </VBox.margin>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#ace5ee" />
+                                <Stop color="#26c2ff" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                    <font>
+                        <Font name="KG Second Chances Solid" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXButton fx:id="crimeBtn" buttonType="RAISED" onAction="#commitCrime" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Commit!" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets left="250.0" top="20.0" />
+                    </VBox.margin>
+                </JFXButton>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
