@@ -14,6 +14,7 @@ var config = require('./config')
 const mongoose = require('mongoose');
 mongoose.connect(config.database);
 var Player = require('./app/models/player');
+var Crime = require('./app/models/crime');
 
 app.set('port', (process.env.PORT || 5000))
 app.set('SecretServerKey', config.secret);
@@ -98,7 +99,7 @@ router.route('/signup')
                     });
                 });
             }
-            else if(player) res.json({
+            else if (player) res.json({
                 message: 'Player name exists, choose another name.',
                 success: false
             });
@@ -126,7 +127,7 @@ router.route('/authenticate')
                 /* If Bcrypt-hashed password in the db matches with the input password
                  *   create the authentication token (JWT).
                  */
-                player.comparePassword(req.body.password, function(err, isMatch){
+                player.comparePassword(req.body.password, function (err, isMatch) {
 
                     if (isMatch && !err) {
                         var token = jwt.sign(player, app.get('SecretServerKey'), {
@@ -160,6 +161,18 @@ router.route('/players')
             if (err) res.send(err);
 
             res.json(players);
+        });
+
+    });
+
+router.route('/crimes') /*Intentionally leaved as a unprotected route.*/
+
+    .get(function (req, res) {
+        Crime.find(function (err, crimes) {
+
+            if (err) res.send(err);
+
+            res.json(crimes);
         });
 
     });
@@ -203,7 +216,8 @@ router.route('/players/:player_uid')
 
     .delete(function (req, res) {
         Player.remove({
-            _id: req.params.player_uid}, function (err, player) {
+            _id: req.params.player_uid
+        }, function (err, player) {
 
             if (err) {
                 res.send(err);
