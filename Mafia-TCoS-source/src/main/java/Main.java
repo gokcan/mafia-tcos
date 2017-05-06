@@ -8,11 +8,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    // **Declare static Stage**
-    private static Stage primaryStager;
+    private static Stage primaryStager; // **Declare static Stage**
+
     private void setPrimaryStage(Stage stage) {
         Main.primaryStager = stage;
     }
+
     static public Stage getPrimaryStage() {
         return Main.primaryStager;
     }
@@ -24,15 +25,15 @@ public class Main extends Application {
 
         String image = Main.class.getClassLoader().getResource("mafia-wallpapers.jpg").toExternalForm();
         root.setStyle("-fx-background-image: url('" + image + "'); " +
-                "-fx-background-position: center center; " +
-                "-fx-background-size: cover"
+                    "-fx-background-position: center center; " +
+                        "-fx-background-size: cover"
         );
         primaryStager = primaryStage;
 
         SoundManager soundManager = new SoundManager();
         soundManager.play();
 
-        GameEngine gameEngine = new GameEngine();
+        GameEngine gameEngine = GameEngine.game(); /* Nice usage of Singleton Pattern */
         gameEngine.init();
 
         primaryStager.setTitle("Mafia: The City of Sin");
@@ -40,7 +41,6 @@ public class Main extends Application {
         primaryStager.setScene(new Scene(root));
         primaryStager.show();
     }
-
     public static void main(String[] args) {
         launch(args);
     }
