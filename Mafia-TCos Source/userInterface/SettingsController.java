@@ -29,8 +29,8 @@ public class SettingsController {
     public Button backButtonSettings;
 
     public void volumeChanged(MouseEvent scrollEvent) {
-        System.out.println(volumeSlider.getValue());
         box.adjustVolume((float)volumeSlider.getValue());
+        System.out.println(volumeSlider.getValue());
     }
 
     public void musicEnabled(MouseEvent mouseEvent) {

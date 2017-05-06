@@ -37,42 +37,41 @@ public class MapController {
 
     public void subMenuClicked(MouseEvent mouseEvent) throws IOException {
         JFXButton button = (JFXButton) mouseEvent.getSource();
-        System.out.println((Button) mouseEvent.getSource());
         Stage popUpStage = new Stage();
         if ((button).getText().equals("CRIME"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("CrimeScene.fxml"));
-            Scene trial = new Scene(root, 1080, 720);
+            Scene trial = new Scene(root, 600, 400);
             popUpStage.setScene(trial);
         }
         else if((button).getText().equals("car theft"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("CarScene.fxml"));
-            Scene trial = new Scene(root, 1080, 720);
+            Scene trial = new Scene(root, 600, 400);
             popUpStage.setScene(trial);
         }
         else if((button).getText().equals("drugs"))
         {
-            Parent root = FXMLLoader.load(getClass().getResource("infoSample.fxml"));
-            Scene trial = new Scene(root, 1080, 720);
+            Parent root = FXMLLoader.load(getClass().getResource("DrugScene.fxml"));
+            Scene trial = new Scene(root, 600, 400);
             popUpStage.setScene(trial);
         }
         else if((button).getText().equals("buy bullet"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("infoSample.fxml"));
-            Scene trial = new Scene(root, 1080, 720);
+            Scene trial = new Scene(root, 600, 400);
             popUpStage.setScene(trial);
         }
         else if((button).getText().equals("sell car"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("infoSample.fxml"));
-            Scene trial = new Scene(root, 1080, 720);
+            Scene trial = new Scene(root, 600, 400);
             popUpStage.setScene(trial);
         }
         else if((button).getText().equals("buy weapon"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("infoSample.fxml"));
-            Scene trial = new Scene(root, 1080, 720);
+            Scene trial = new Scene(root, 600, 400);
             popUpStage.setScene(trial);
         }
         popUpStage.show();

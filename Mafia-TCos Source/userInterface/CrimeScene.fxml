@@ -84,6 +84,9 @@
          <image>
             <Image url="@crime%202.jpg" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
     </children>
 </AnchorPane>
