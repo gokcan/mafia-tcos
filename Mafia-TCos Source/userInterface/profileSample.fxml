@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProfileController">
+   <children>
+      <BorderPane prefHeight="850.0" prefWidth="1300.0">
+         <top>
+            <AnchorPane prefHeight="163.0" prefWidth="1300.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="157.0" fitWidth="159.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="220.0" layoutY="45.0" text="NAME" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="96.0" text="RANK TITLE" textFill="WHITE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <ScrollPane prefHeight="557.0" prefWidth="1300.0" BorderPane.alignment="CENTER_LEFT">
+               <content>
+                  <AnchorPane prefHeight="850.0" prefWidth="1300.0">
+                     <children>
+                        <Label layoutX="317.0" layoutY="309.0" text="INVENTORY">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="45.0" text="health">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="144.0" text="fbi raid chance">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="96.0" text="experience">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="190.0" text="imprisonment">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar layoutX="277.0" layoutY="42.0" prefWidth="200.0" progress="1.0" />
+                        <ProgressBar layoutX="277.0" layoutY="93.0" prefWidth="200.0" progress="0.0" />
+                        <ProgressBar layoutX="277.0" layoutY="141.0" prefWidth="200.0" progress="0.0" />
+                        <Label layoutX="360.0" layoutY="187.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="45.0" layoutY="230.0" text="money">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="276.0" text="laundered money">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="361.0" layoutY="227.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="273.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="372.0" text="drugs">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="415.0" prefHeight="20.0" prefWidth="94.0" text="weapons">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="463.0" prefHeight="20.0" prefWidth="87.0" text="bullets">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="47.0" layoutY="509.0" prefHeight="20.0" prefWidth="60.0" text="cars">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="47.0" layoutY="554.0" text="manifacturing tools">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="48.0" layoutY="599.0" text="distribution tools">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="369.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="412.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="460.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="506.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="551.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="596.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="851.0" layoutY="35.0" text="STATS">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="815.0" layoutY="309.0" text="ACHIEVEMENTS">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="669.0" layoutY="96.0" text="attempted crimes">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="669.0" layoutY="134.0" text="car stolen">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="669.0" layoutY="168.0" text="batches cooked">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="669.0" layoutY="203.0" text="batches sold">
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1007.0" layoutY="93.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1007.0" layoutY="128.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1007.0" layoutY="200.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1007.0" layoutY="165.0" text="0">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

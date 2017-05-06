@@ -1,55 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SettingsController">
-    <children>
-        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <HBox alignment="CENTER" prefHeight="261.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <children>
-                        <Label prefHeight="30.0" prefWidth="164.0" text="SETTINGS">
-                            <font>
-                                <Font name="Copperplate Gothic Bold" size="27.0" />
-                            </font>
-                        </Label>
-                        <ImageView fitHeight="51.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@settings.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </HBox>
-                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="361.0" spacing="20.0">
-                    <children>
-                        <RadioButton id="musicButton" mnemonicParsing="false" onMouseClicked="#enableMusic" text="Enable Music" />
-                        <RadioButton id="soundsButton" mnemonicParsing="false" onMouseClicked="#enableSounds" text="Enable background sounds" />
-                        <Label fx:id="volumeLabel" text="Volume" />
-                        <Slider id="volumeSlider" fx:id="volumeSlider" onMouseDragged="#volumeChanged" prefHeight="21.0" prefWidth="191.0" value="100.0" />
-                    </children>
-                </VBox>
-                <HBox alignment="CENTER" prefHeight="152.0" prefWidth="1080.0" VBox.vgrow="ALWAYS">
-                    <children>
-                        <Button fx:id="backButtonSettings" mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
-                            <font>
-                                <Font name="Copperplate Gothic Bold" size="18.0" />
-                            </font>
-                            <effect>
-                                <DropShadow />
-                            </effect>
-                        </Button>
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SettingsController">
+   <children>
+      <Label layoutX="501.0" layoutY="44.0" text="SETTINGS">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="74.0" fitWidth="68.0" layoutX="719.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@settings.png" />
+         </image>
+      </ImageView>
+      <RadioButton layoutX="466.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#musicEnabled" text="Enable music" />
+      <RadioButton layoutX="466.0" layoutY="253.0" mnemonicParsing="false" onMouseClicked="#soundsEnabled" text="Enable background sounds" />
+      <Slider fx:id="volumeSlider" layoutX="466.0" layoutY="360.0" onMouseDragged="#volumeChanged" prefHeight="21.0" prefWidth="330.0" />
+      <Button id="backButton" layoutX="590.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label fx:id="volumeLabel" layoutX="470.0" layoutY="320.0" text="Volume" />
+   </children>
 </AnchorPane>

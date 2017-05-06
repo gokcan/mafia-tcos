@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CarController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1080.0" opacity="0.94" pickOnBounds="true">
+         <image>
+            <Image url="@car%20theft.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="219.0" fitWidth="425.0" layoutX="333.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@car%20theft2.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <JFXButton fx:id="crimeBtn" buttonType="RAISED" layoutX="493.0" layoutY="592.0" onAction="#commitCrime" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Commit!" textFill="WHITE" />
+      <JFXRadioButton fx:id="crimeOption1" layoutX="448.0" layoutY="360.0" prefHeight="17.0" prefWidth="139.0" selected="true" text="Renault Megane (%56)">
+         <font>
+            <Font name="KG Second Chances Solid" size="13.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ace5ee" />
+                  <Stop color="#26c2ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="crimeOption11" layoutX="448.0" layoutY="399.0" prefHeight="17.0" prefWidth="139.0" text=" Mercedes CLA 200 (%34)">
+         <font>
+            <Font name="KG Second Chances Solid" size="13.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ace5ee" />
+                  <Stop color="#26c2ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="group1" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="crimeOption111" layoutX="448.0" layoutY="434.0" prefHeight="17.0" prefWidth="139.0" text="Ferrari F430 Spider (%21)">
+         <font>
+            <Font name="KG Second Chances Solid" size="13.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ace5ee" />
+                  <Stop color="#26c2ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="group11" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="crimeOption1111" layoutX="448.0" layoutY="471.0" prefHeight="17.0" prefWidth="139.0" text="Rolls Royce Ghost  (%2)">
+         <font>
+            <Font name="KG Second Chances Solid" size="13.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ace5ee" />
+                  <Stop color="#26c2ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <toggleGroup>
+            <ToggleGroup fx:id="group111" />
+         </toggleGroup>
+      </JFXRadioButton>
+   </children>
+</AnchorPane>

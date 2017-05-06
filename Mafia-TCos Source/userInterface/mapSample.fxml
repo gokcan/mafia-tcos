@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
@@ -48,43 +51,48 @@
                         <Font name="Copperplate Gothic Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Button id="accountButton" layoutX="1142.0" layoutY="81.0" mnemonicParsing="false" text="ACCOUNT">
+                  <Button id="accountButton" layoutX="1143.0" layoutY="61.0" mnemonicParsing="false" text="ACCOUNT">
                      <font>
                         <Font name="Copperplate Gothic Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button id="infoButton" layoutX="1143.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#infoClicked" prefHeight="32.0" prefWidth="126.0" text="info">
+                  <Button id="infoButton" layoutX="1143.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#buttonClicked" prefHeight="32.0" prefWidth="126.0" text="info">
                      <font>
                         <Font name="Copperplate Gothic Bold" size="19.0" />
                      </font>
                   </Button>
-                  <ImageView id="infoButton" fitHeight="30.0" fitWidth="26.0" layoutX="1232.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="infoButton" fitHeight="30.0" fitWidth="26.0" layoutX="1238.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icon.png" />
                      </image>
                   </ImageView>
+                  <Button id="accountButton" fx:id="menuButton" layoutX="1143.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#buttonClicked" prefHeight="32.0" prefWidth="128.0" text="MENU">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
          </top>
          <center>
             <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="580.0" fitWidth="1300.0" opacity="0.7" pickOnBounds="true">
+                  <ImageView fitHeight="580.0" fitWidth="1300.0" opacity="0.59" pickOnBounds="true">
                      <image>
-                        <Image url="@mapmafia3.jpg" />
+                        <Image url="@mafiamap3.jpg" />
                      </image>
                   </ImageView>
-                  <GridPane layoutX="115.0" layoutY="55.0" prefHeight="471.0" prefWidth="1071.0" style="-fx-grid-lines-visible: false;">
+                  <GridPane layoutX="181.0" layoutY="91.0" prefHeight="404.0" prefWidth="956.0" style="-fx-grid-lines-visible: false;">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="98.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="96.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="106.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="126.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="98.0" minWidth="10.0" prefWidth="65.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="107.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="125.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
@@ -96,53 +104,9 @@
                       <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button id="crimeButton4" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="CRIME" textFill="#970000" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button id="crimeButton1" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" text="CRIME" textFill="#970000" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                           <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button id="carTheftButton" mnemonicParsing="false" prefHeight="66.0" prefWidth="120.0" text="CAR THEFT" textFill="#970000" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                           <font>
-                              <Font name="Bodoni MT Black" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button id="drugButton1" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" text="DRUGS" textFill="#970000" GridPane.columnIndex="4" GridPane.rowIndex="8">
-                           <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button id="drugButton2" layoutX="446.0" layoutY="429.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="123.0" text="DRUGS" textFill="#970000" GridPane.columnIndex="3" GridPane.rowIndex="8">
-                           <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button id="crimeButton5" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" text="CRIME" textFill="#970000" GridPane.rowIndex="2">
-                           <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button id="crimeButton3" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" text="CRIME" textFill="#970000" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button id="buyWeapon1" layoutX="112.0" layoutY="320.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="BUY WEAPON" textFill="#970000" GridPane.columnIndex="8" GridPane.rowIndex="5">
-                           <font>
-                              <Font name="Bodoni MT Black" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button id="buyWeapon2" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="BUY WEAPON" textFill="#970000" GridPane.columnIndex="8" GridPane.rowIndex="6">
-                           <font>
-                              <Font name="Bodoni MT Black" size="13.0" />
-                           </font>
-                        </Button>
                         <Button layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="DRUGS: 0" textFill="#200096" GridPane.columnIndex="7">
                            <font>
                               <Font name="Bodoni MT Black" size="14.0" />
@@ -163,21 +127,198 @@
                               <Font name="Bodoni MT Black" size="14.0" />
                            </font>
                         </Button>
-                        <Button id="crimeButton2" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="CRIME" textFill="#970000" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="CRIME" GridPane.rowIndex="2">
                            <font>
-                              <Font name="Bodoni MT Black" size="14.0" />
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
                            </font>
-                        </Button>
-                        <Button id="buyBullets" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="BUY BULLETS" textFill="#970000" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f20000" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="111.0" onMouseClicked="#subMenuClicked" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="CRIME" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <effect>
+                              <DropShadow />
+                           </effect>
                            <font>
-                              <Font name="Bodoni MT Black" size="13.0" />
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
                            </font>
-                        </Button>
-                        <Button id="sellCar" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" text="SELL CARS" textFill="#970000" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f20000" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="CRIME" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <effect>
+                              <DropShadow />
+                           </effect>
                            <font>
-                              <Font name="Bodoni MT Black" size="13.0" />
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
                            </font>
-                        </Button>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f20000" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="CRIME" GridPane.rowIndex="3">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f20000" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="CRIME" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f20000" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" style="-fx-background-color: #a9a9a9;" text="drugs" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#0e9e6e" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                           <ripplerFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#ff3d3d" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" style="-fx-background-color: #a9a9a9;" text="drugs" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="18.0" />
+                           </font>
+                           <ripplerFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#ff3d3d" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#0e9e6e" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" prefHeight="32.0" prefWidth="127.0" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="sell car" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="17.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#205fff" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" prefHeight="32.0" prefWidth="115.0" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="car theft" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="16.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#05a4e8" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" prefHeight="32.0" prefWidth="125.0" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="buy bullet" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="16.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#838105" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onMouseClicked="#subMenuClicked" prefHeight="32.0" prefWidth="128.0" ripplerFill="#836868" style="-fx-background-color: #a9a9a9;" text="buy weapon" GridPane.columnIndex="8" GridPane.rowIndex="5">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Copperplate Gothic Bold" size="16.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#7d129e" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </JFXButton>
                      </children>
                   </GridPane>
                </children>

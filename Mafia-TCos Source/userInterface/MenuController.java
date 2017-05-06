@@ -22,43 +22,38 @@ public class MenuController {
     public Button creditsButton;
     public Button infoButton;
 
+    Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
     public void buttonPressed(MouseEvent actionEvent) throws IOException {
         Button button = (Button)actionEvent.getSource();
         Stage current = (Stage)button.getScene().getWindow();
-        if ((button).getText().equals("Settings"))
+        if ((button).getText().equals("SETTINGS"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("settingsSample.fxml"));
-            current.setScene(new Scene(root, 1080, 720));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
         }
-        else if((button).getText().equals("view credits"))
+        else if((button).getText().equals("VIEW CREDITS"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("creditsSample.fxml"));
-            current.setScene(new Scene(root, 1080, 720));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
         }
-        else if((button).getText().equals("info"))
+        else if((button).getText().equals("INFO"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("infoSample.fxml"));
-            current.setScene(new Scene(root, 1080, 720));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
         }
         else if((button).getText().equals("PROFILE"))
         {
-
+            Parent root = FXMLLoader.load(getClass().getResource("profileSample.fxml"));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
         }
         else if((button).getText().equals("CONTINUE"))
         {
             Parent root = FXMLLoader.load(getClass().getResource("mapSample.fxml"));
-            current.setScene(new Scene(root, 1080, 720));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
         }
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        current.setMaximized(true);
-        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 
-        //set Stage boundaries to visible bounds of the main screen
-        current.setX(primaryScreenBounds.getMinX());
-        current.setY(primaryScreenBounds.getMinY());
-        current.setWidth(primaryScreenBounds.getWidth());
-        current.setHeight(primaryScreenBounds.getHeight());
+
+        current.setMaximized(true);
         //current.setFullScreen(true);
         current.show();
     }

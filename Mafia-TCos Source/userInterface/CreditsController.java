@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class CreditsController {
 
+    Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
     @FXML
     private Button backButtonCredits;
 
@@ -26,7 +27,7 @@ public class CreditsController {
             Stage current = (Stage)button.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("menuSample.fxml"));
             current.setMaximized(true);
-            current.setScene(new Scene(root, 1080, 720));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
             //current.setFullScreen(true);
             current.show();
         }

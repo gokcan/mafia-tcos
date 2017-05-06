@@ -21,7 +21,7 @@ import java.lang.String;
 public class SettingsController {
 
     public Label volumeLabel;
-
+    Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
     SoundManager box = new SoundManager();
 
     @FXML
@@ -33,14 +33,14 @@ public class SettingsController {
         box.adjustVolume((float)volumeSlider.getValue());
     }
 
-    public void enableSounds(MouseEvent mouseEvent) {
+    public void musicEnabled(MouseEvent mouseEvent) {
         if (!box.getSoundStatus())
             box.playSound(0);
         else
             box.pauseSound();
     }
 
-    public void enableMusic(MouseEvent mouseEvent){
+    public void soundsEnabled(MouseEvent mouseEvent){
         if (!box.getMusicStatus())
             box.playMusic();
         else
@@ -52,7 +52,7 @@ public class SettingsController {
         if ((button).getText().equals("BACK")) {
             Stage current = (Stage) button.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("menuSample.fxml"));
-            current.setScene(new Scene(root, 1080, 720));
+            current.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
             current.setMaximized(true);
             current.show();
         }
