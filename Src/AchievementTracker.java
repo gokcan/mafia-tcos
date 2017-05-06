@@ -35,7 +35,7 @@ public class AchievementTracker{
    public void track(){
       try {
          for(int i = 0; i < p.getLockedSize();i++){ // size of the array holding unearned achievements
-            String mName = "achi" + p.getAchievement(i).getID(); // index numbers will not always be equal to the ID
+            String mName = "checkForAchievement" + p.getAchievement(i).getID(); // index numbers will not always be equal to the ID
             Class<?> c = this.getClass();
             Method m = c.getMethod(mName);
             m.invoke(this);
@@ -57,34 +57,35 @@ public class AchievementTracker{
    
    // getMethod() will not be able to find these if they are private
    // for every achievement created, add a method here
-   // method's name should start with "achi" followed by the ID of that achievement
-   public void achi1(){
+   // method's name should start with "checkForAchievement" followed by the ID of that achievement
+   // since every achievement has custom its conditions, methods here must be tailored for that achievement
+   public void checkForAchievement1(){
 
       if (p.getMoney() >= 1000)
          unlocked.add(1);
    }
    
-   public void achi2(){
+   public void checkForAchievement2(){
       if (p.getMoney() >= 5000)
          unlocked.add(2);
    }
    
-   public void achi3(){
+   public void checkForAchievement3(){
       if (p.getDrug() >= 1000)
          unlocked.add(3);
    }
    
-   public void achi4(){
+   public void checkForAchievement4(){
       if (p.getDrug() >= 5000)
          unlocked.add(4);
    }
    
-   public void achi5(){
+   public void checkForAchievement5(){
       if (p.getLaunderedMoney() >= 1000){
          unlocked.add(5);}
    }
    
-   public void achi6(){
+   public void checkForAchievement6(){
       if (p.getLaunderedMoney() >= 5000)
          unlocked.add(6);
    }
