@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * @Author Skylifee7 on 03/05/2017.
+ * @Author SKYLIFE on 03/05/2017.
  */
 
 public class Crime {
@@ -18,19 +18,25 @@ public class Crime {
     @SerializedName("_id")
     @Expose
     private String crimeID;
+    @SerializedName("PropertyCrime")
+    @Expose
+    private String isProperty;
 
     /**
      * No args constructor for use in serialization
      */
 
-    public Crime() {}
+    public Crime() {
 
-    public Crime(String description, String crimeID, int difficultyLevel) {
+    }
+
+    public Crime(String description, String crimeID, int difficultyLevel, String isProperty) {
 
         super();
         this.description = description;
         this.difficultyLevel = difficultyLevel;
         this.crimeID = crimeID;
+        this.isProperty = isProperty;
     }
 
     public int getDifficultyLevel() {
@@ -45,6 +51,10 @@ public class Crime {
         return description;
     }
 
+    public String getisProperty() {
+        return isProperty;
+    }
+
     public void setCrimeID(String crimeID) {
         this.crimeID = crimeID;
     }
@@ -55,6 +65,10 @@ public class Crime {
 
     public void setDifficultyLevel(int difficultyLevel) {
         this.difficultyLevel = difficultyLevel;
+    }
+
+    public void setProperty(String isProperty) {
+        this.isProperty = isProperty;
     }
 
 
