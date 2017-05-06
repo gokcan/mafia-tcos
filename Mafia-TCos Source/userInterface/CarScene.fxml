@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CarController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.94" pickOnBounds="true">
+         <image>
+            <Image url="@car%20theft.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="243.0" layoutX="177.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@car%20theft2.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <JFXButton id="carTheftCommit" fx:id="carTheftCommit" buttonType="RAISED" layoutX="253.0" layoutY="324.0" onMouseClicked="#commitCrime" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Commit!" textFill="WHITE" />
+      <VBox layoutX="197.0" layoutY="171.0" prefHeight="100.0" prefWidth="187.0" spacing="10.0">
+         <children>
+            <JFXRadioButton fx:id="carCrimeOption1" onMouseClicked="#optionClicked" prefHeight="17.0" prefWidth="139.0" text="Renault Megane (%56)">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+            <JFXRadioButton id="carCrimeOption2" fx:id="carCrimeOption2" onMouseClicked="#optionClicked" prefHeight="17.0" prefWidth="139.0" text=" Mercedes CLA 200 (%34)" toggleGroup="$group">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+            <JFXRadioButton id="carCrimeOption3" fx:id="carCrimeOption3" onMouseClicked="#optionClicked" prefHeight="17.0" prefWidth="139.0" text="Ferrari F430 Spider (%21)" toggleGroup="$group">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+            <JFXRadioButton id="carCrimeOption4" fx:id="carCrimeOption4" onMouseClicked="#optionClicked" prefHeight="17.0" prefWidth="139.0" text="Rolls Royce Ghost  (%2)" toggleGroup="$group">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

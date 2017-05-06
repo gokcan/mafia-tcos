@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DistributionController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@drug2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="144.0" fitWidth="277.0" layoutX="165.0" layoutY="28.0" pickOnBounds="true">
+         <effect>
+            <DropShadow />
+         </effect>
+         <image>
+            <Image url="@distribution1.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="distributionButton" buttonType="RAISED" layoutX="262.0" layoutY="309.0" onMouseClicked="#buyClicked" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Buy!" textFill="WHITE" />
+      <VBox layoutX="214.0" layoutY="182.0" prefHeight="117.0" prefWidth="116.0" spacing="10.0">
+         <children>
+            <JFXRadioButton fx:id="DistributionTool1" prefHeight="17.0" prefWidth="139.0" text="Manufacturing">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="DistributionTool2" prefHeight="17.0" prefWidth="139.0" text="Manufacturing" toggleGroup="$group">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="DistributionTool3" prefHeight="17.0" prefWidth="139.0" text="Manufacturing" toggleGroup="$group">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="DistributionTool4" prefHeight="17.0" prefWidth="139.0" text="Manufacturing" toggleGroup="$group">
+               <font>
+                  <Font name="KG Second Chances Solid" size="13.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ace5ee" />
+                        <Stop color="#26c2ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXRadioButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

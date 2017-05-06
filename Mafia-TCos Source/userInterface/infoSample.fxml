@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InfoController">
+    <children>
+            <TextArea layoutX="383.0" layoutY="135.0" onMouseClicked="#dragged" prefHeight="450.0" prefWidth="534.0" text="Login:&#10;In order to create an account, you should click the &quot;Sign up&quot; &#10;button on the &quot;Menu&quot; page. After entering a user name and &#10;a password,  click the &quot;Sign up&quot; button. If you already have an &#10;account, click &quot;Login&quot; in the menu and enter your credentials.&#10;Once you're logged in,  main game screen will welcome you.&#10;&#10;Profile:&#10;Profile page is the place where you can manage your account.&#10;You can reach your profile either from the main menu by &#10;clicking to &quot;Profile&quot; or from the main game screen, again &#10;clicking the &quot;Profile&quot; button. You can customize your profile&#10;from the &quot;Account&quot; section by uploading a profile picture or&#10;typing your status. You can keep track of your current status&#10;from the &quot;Achievements&quot;, &quot;Stats&quot; and &quot;Inventory&quot; sections.&#10;&#10;Map:&#10;Map shown on the main game screen represents the crime &#10;regions where you can select various types of crimes by&#10;single clicking the labels. Related submenus will appear on &#10;the right side of the screen. The upper right side of the map&#10;demonstrates the safehouse of each player.&#10;&#10;Crime committing:&#10;Once you click one of the labels on the map, a submenu&#10;appears on the right side of the screen. From the provided&#10;crime options with specified risk/success percentages, choose&#10;one of them with a single click and press &quot;Go for it!&quot;.&#10;***Smuggling requires the players to have specific ranks and&#10;threshold money to do the shopping.&#10;&#10;Jail:&#10;If your attempt for committing a crime fails, screen is disabled&#10;for 30 seconds preventing any interaction with the game. &#10;Also, possibility of FBI raid over %50 may result in jail time.&#10;Each time in jail is counted and can be tracked from the &#10;profile.&#10;&#10;Tiredness:&#10;After each crime committing attempt, you have to wait for a &#10;predefined period in order to commit the same type of crime.&#10;&#10;FBI Raid Chance:&#10;Each crime has a specific FBI raid chance, that alters the&#10;total raid chance. FBI raid may result in jail time or money &#10;loss. Laundered money will be used after a loss.&#10;&#10;Upgrades: &#10;You can buy upgrades by clicking the &quot;Upgrades&quot; label&#10;on the main screen. A submenu appears on the right of the &#10;screen providing the options at different prices and ranks.&#10;You can get them for increasing your production rate, &#10;lowering raid chance etc.&#10;&#10;Game Over:&#10;Game ends when all of the health of the player is used up or &#10;when the player ends up in jail for 20 times.&#10;&#10;You're all set! Good luck in becoming a gangsta!&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;" />
+            <Label layoutX="572.0" layoutY="62.0" text="INFO">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="28.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="56.0" fitWidth="59.0" layoutX="663.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@icon.png" />
+                </image>
+                <effect>
+                    <DropShadow height="14.55" radius="6.775" width="14.55" />
+                </effect>
+            </ImageView>
+            <Button id="backButtonInfo" layoutX="609.0" layoutY="599.0" mnemonicParsing="false" onMouseClicked="#backPressed" text="BACK">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="18.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Button>
+    </children>
+</AnchorPane>
