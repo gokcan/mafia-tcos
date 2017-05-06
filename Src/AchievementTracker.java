@@ -1,8 +1,11 @@
 import java.util.*;
 import java.lang.reflect.*;
 /*
-* Creates 
-* when the track() method is called, Achievement trac
+* instantiate class in GameEngine 
+* takes reference to a single player object
+* creates achievements inside the player object
+* invoke track() method whenever an event that may unlock an achievement is executed
+* AchievementTracker interfaces with Player class to handle achievements
 */
 
 public class AchievementTracker{
@@ -32,7 +35,7 @@ public class AchievementTracker{
    public void track(){
       try {
          for(int i = 0; i < p.getLockedSize();i++){ // size of the array holding unearned achievements
-            String mName = "achi" + p.getAchievement(i).getID();
+            String mName = "achi" + p.getAchievement(i).getID(); // index numbers will not always be equal to the ID
             Class<?> c = this.getClass();
             Method m = c.getMethod(mName);
             m.invoke(this);
