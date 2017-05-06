@@ -65,7 +65,7 @@
                         <ProgressBar layoutX="277.0" layoutY="42.0" prefWidth="200.0" progress="1.0" />
                         <ProgressBar layoutX="277.0" layoutY="93.0" prefWidth="200.0" progress="0.0" />
                         <ProgressBar layoutX="277.0" layoutY="141.0" prefWidth="200.0" progress="0.0" />
-                        <Label layoutX="360.0" layoutY="187.0" text="0">
+                        <Label id="imprisonment" layoutX="360.0" layoutY="187.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
@@ -80,12 +80,12 @@
                               <Font name="Copperplate Gothic Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="361.0" layoutY="227.0" text="0">
+                        <Label id="money" layoutX="361.0" layoutY="227.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="273.0" text="0">
+                        <Label id="launderedMoney" layoutX="360.0" layoutY="273.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
@@ -120,32 +120,32 @@
                               <Font name="Copperplate Gothic Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="369.0" text="0">
+                        <Label id="drugs" layoutX="360.0" layoutY="369.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="412.0" text="0">
+                        <Label id="weapons" layoutX="360.0" layoutY="412.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="460.0" text="0">
+                        <Label id="bullets" layoutX="360.0" layoutY="460.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="506.0" text="0">
+                        <Label id="cars" layoutX="360.0" layoutY="506.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="551.0" text="0">
+                        <Label id="manifacturingTools" layoutX="360.0" layoutY="551.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="360.0" layoutY="596.0" text="0">
+                        <Label id="distributionTools" layoutX="360.0" layoutY="596.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
@@ -180,22 +180,22 @@
                               <Font name="Copperplate Gothic Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1007.0" layoutY="93.0" text="0">
+                        <Label id="attemptedCrimes" layoutX="1007.0" layoutY="93.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1007.0" layoutY="128.0" text="0">
+                        <Label id="carStolen" layoutX="1007.0" layoutY="128.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1007.0" layoutY="200.0" text="0">
+                        <Label id="batchesSold" layoutX="1007.0" layoutY="200.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1007.0" layoutY="165.0" text="0">
+                        <Label id="batchesCooked" layoutX="1007.0" layoutY="165.0" text="0">
                            <font>
                               <Font name="Calibri" size="21.0" />
                            </font>
