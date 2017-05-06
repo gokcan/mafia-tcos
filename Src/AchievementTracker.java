@@ -14,6 +14,7 @@ public class AchievementTracker{
       this.p = p;
       // addAchievement in Player should create an achievement object and pass these arguements to its constructer
       // then add this object to the arraylist holding achievement that have not been earned
+      // do not forget to create a check method for every achievement added here
       p.addAchievement(1,"Earn 1000 money");
       p.addAchievement(2,"Earn 5000 money");
       p.addAchievement(3,"Earn 1000 drugs");
