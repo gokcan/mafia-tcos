@@ -1,21 +1,22 @@
-/**
- * Created by SKYLIFE on 25/04/2017.
- */
 package network;
-
-
+/**
+ * Created by SKYLIFE on 01/05/2017.
+ */
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APICallHelper {
 
     private static Retrofit retrofit;
 
-    private static final String DEV_URL = "https://SECRET-URL-DEV-ENV";
+    private static final String DEV_URL = "https://mafia-tcos.herokuapp.com/api/";
+
     private static final String API_URL = "https://SECRET_URL-PROD-ENV";
+
 
     static {
         setupRestClient();
@@ -30,13 +31,6 @@ public class APICallHelper {
 
         String restApiURL = DEV_URL;
 
-        if (BuildConfig.BUILD_TYPE.startsWith("release")
-                || BuildConfig.BUILD_TYPE.startsWith("live")
-                || BuildConfig.BUILD_TYPE.startsWith("prod")
-
-                ) {
-            restApiURL = API_URL;
-        }
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -50,9 +44,7 @@ public class APICallHelper {
         retrofit = new Retrofit.Builder()
                 .baseUrl(restApiURL)
                 .client(client)
-                .addConverterFactory(JacksonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 }
-
-
