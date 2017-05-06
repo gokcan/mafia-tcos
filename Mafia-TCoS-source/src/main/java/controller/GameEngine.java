@@ -19,7 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class GameEngine implements AccessManager.AccessClientListener {
 
-    private static GameEngine staticGameInstance;
+    private static GameEngine staticGameInstance = null; //* Needs to be null before the first init() of the game.
     private AccessManager accessManager;
     private WelcomeScene welcomeScene;
     private CrimeScene crimeScene;
@@ -31,10 +31,12 @@ public class GameEngine implements AccessManager.AccessClientListener {
     private double successChance;
     private boolean isPropertyCrime = false;
 
-    public GameEngine() {
-        /*
-        Game Engine will obey the Singleton Pattern, but not yet implemented.
-         */
+    /*
+    Game Engine obey the Singleton Pattern to ensure only one instance of this class can be created
+    during the entire game-play timeline.
+     */
+    protected GameEngine() {
+
     }
 
     public void init() {
@@ -46,7 +48,6 @@ public class GameEngine implements AccessManager.AccessClientListener {
         crimeScene = new CrimeScene();
         mapper = new HashMap();
     }
-
 
     private void calcSuccessChance() {
 
@@ -102,13 +103,13 @@ public class GameEngine implements AccessManager.AccessClientListener {
             });
 
         }
-        else {
-            Platform.runLater(() -> {
+             else {
+                Platform.runLater(() -> {
                 crimeScene.showNotification("Failed! But you escaped..");
-            });
+                 });
 
-            playerUnique.increment(Player.PROPERTY_TYPE.EXPERIENCE, 20);
-            playerUnique.increment(Player.PROPERTY_TYPE.HEALTH, -2);
+                playerUnique.increment(Player.PROPERTY_TYPE.EXPERIENCE, 20);
+                playerUnique.increment(Player.PROPERTY_TYPE.HEALTH, -2);
         }
 
         //else if PRISON
@@ -172,7 +173,7 @@ public class GameEngine implements AccessManager.AccessClientListener {
         while (i < crimes.size()) {
             System.out.println(crimes.get(i).getisProperty());
             if ((crimes.get(i).getDifficultyLevel() != difficulty)){
-                crimes.remove(i);
+                    crimes.remove(i);
             }
             else i++;
         }
@@ -201,7 +202,7 @@ public class GameEngine implements AccessManager.AccessClientListener {
         for (int k = 0; k < crimes.size(); k++) {
             System.out.println(crimes.get(k).getDescription());
             calcSuccessChance();
-            crimes.get(k).setDescription(crimes.get(k).getDescription() + " (%" + successChance + ")");
+                crimes.get(k).setDescription(crimes.get(k).getDescription() + " (%" + successChance + ")");
         }
     }
 
@@ -227,6 +228,9 @@ public class GameEngine implements AccessManager.AccessClientListener {
     }
 
     public static GameEngine game() {
+        if (staticGameInstance == null) {
+            staticGameInstance = new GameEngine();
+        }
         return staticGameInstance;
     }
 
