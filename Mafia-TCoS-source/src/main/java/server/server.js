@@ -14,7 +14,7 @@ var config = require('./config')
 const mongoose = require('mongoose');
 mongoose.connect(config.database);
 var Player = require('./app/models/player');
-var Crime = require('./app/models/crime');
+var Crime= require('./app/models/crime');
 
 app.set('port', (process.env.PORT || 5000))
 app.set('SecretServerKey', config.secret);
@@ -80,29 +80,35 @@ router.route('/signup')
 
                 var player = new Player();
 
-                /* If the player's first time in town,
-                 * assign fresh values for his properties.
-                 */
+          /* If the player's first time in town, 
+             * assign fresh values for his properties.
+             */
                 player.name = req.body.name;
                 player.password = req.body.password;
                 player.health = 100;
                 player.money = 1000;
-                player.experience = 1;
+                player.rank = 1;
+                player.experience = 1500;
+                player.bullet = 100;
 
                 player.save(function (err) {
 
-                    if (err) res.send(err);
+                if (err) res.send(err);
 
-                    res.json({
-                        message: 'Player instance has been created!',
-                        player_uid: player._id
-                    });
+                res.json({
+                    message: 'Player instance has been created!',
+                    player_uid: player._id
+                });
                 });
             }
-            else if (player) res.json({
+            else if(player) {
+
+                res.sendStatus(401);
+                res.json({
                 message: 'Player name exists, choose another name.',
                 success: false
             });
+            }
         })
 
     });
@@ -124,29 +130,29 @@ router.route('/authenticate')
                 })
             }
             else if (player) {
-                /* If Bcrypt-hashed password in the db matches with the input password
+                /* If Bcrypt-hashed password in the db matches with the input password 
                  *   create the authentication token (JWT).
                  */
-                player.comparePassword(req.body.password, function (err, isMatch) {
+                player.comparePassword(req.body.password, function(err, isMatch){
 
                     if (isMatch && !err) {
                         var token = jwt.sign(player, app.get('SecretServerKey'), {
-                            expiresIn: 60 * 60 * 60 // seconds
-                        });
+                        expiresIn: 60 * 60 * 60 // seconds
+                    });
 
-                        //res.sendStatus(200);
-                        res.json({
-                            success: true,
-                            player_uid: player._id,
-                            message: 'Token is passed to the client.',
-                            authToken: token
-                        })
-                    }
+                    //res.sendStatus(200);
+                    res.json({
+                        success: true,
+                        player_uid: player._id,
+                        message: 'Token is passed to the client.',
+                        authToken: token
+                    })
+                }
                     else {
                         res.json({
-                            success: false,
-                            message: "Authentication failed, Password is wrong."
-                        })
+                        success: false,
+                        message: "Authentication failed, Password is wrong."
+                    })
                     }
                 })
             }
@@ -165,7 +171,7 @@ router.route('/players')
 
     });
 
-router.route('/crimes') /*Intentionally leaved as a unprotected route.*/
+    router.route('/crimes')
 
     .get(function (req, res) {
         Crime.find(function (err, crimes) {
@@ -195,12 +201,12 @@ router.route('/players/:player_uid')
             if (err) {
                 res.send(err);
             }
-
-
+            player.rank = req.body.rank;
             player.inPrison = req.body.inPrison;
             player.health = req.body.health;
             player.money = req.body.money;
             player.experience = req.body.experience;
+            player.bullet = req.body.bullet;
 
             player.save(function (err) {
 
@@ -216,8 +222,7 @@ router.route('/players/:player_uid')
 
     .delete(function (req, res) {
         Player.remove({
-            _id: req.params.player_uid
-        }, function (err, player) {
+            _id: req.params.player_uid}, function (err, player) {
 
             if (err) {
                 res.send(err);
