@@ -1,7 +1,10 @@
+![Alt Text](https://gokcandegirmenci.com/mafiatcosSmall.png)
+
 # CS319-Group 2A Project
 __Mafia: The City of Sin__ :city_sunset:
 
-![Alt Text](https://gokcandegirmenci.com/mafiatcosSmall.png)
+![Alt Text](https://i.gyazo.com/00f71625f95712ba0671967962fe3da1.gif)
+
 
 ## Project Description
 "__Mafia: The City of Sin__", with its basic RPG features is a text-based game that is a combined version of well-known "_Age of Empires_" and "[Omerta](https://www.barafranca.com)". It is a single/multi player (but not P2P) endless strategy game that players intend to complete the tasks based on committing a different sets of crimes and gain as much as possible experience(xp). As the tasks are completed, users will be able to gain experience and money with a rank increase. In the game, players will be able to buy upgrades and customisation depending on their money and rank: which will change their weapons, cars, production rate, bullet power, hourly income etc. Players will also gain money from selling their goods or trade them. 
