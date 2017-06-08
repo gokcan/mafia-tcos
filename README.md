@@ -1,6 +1,7 @@
+# CS319-Group 2A Project
+
 ![Alt Text](https://gokcandegirmenci.com/mafiatcosSmall.png)
 
-# CS319-Group 2A Project
 __Mafia: The City of Sin__ :city_sunset:
 
 ![Alt Text](https://i.gyazo.com/00f71625f95712ba0671967962fe3da1.gif)
